@@ -1,9 +1,9 @@
 using System;
 using System.Diagnostics;
 
-namespace PiInfoService
+namespace PiInfoService.Info
 {
-    public static class HWInfo
+    public static class Hardware
     {
         private static ProcessStartInfo CPUTempStartInfo = new ProcessStartInfo()
         {

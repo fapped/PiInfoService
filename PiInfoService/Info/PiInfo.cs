@@ -1,6 +1,6 @@
 using System;
 
-namespace PiInfoService
+namespace PiInfoService.Info
 {
     public class PiInfo
     {
@@ -10,12 +10,12 @@ namespace PiInfoService
 
         public static double GetTemp()
         {
-            return HWInfo.GetDoubleTemp();
+            return Hardware.GetDoubleTemp();
         }
 
         public static string GetIp()
         {
-            return SWInfo.GetIpAddress();
+            return Software.GetIpAddress();
         }
     }
 }

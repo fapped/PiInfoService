@@ -1,9 +1,9 @@
 using System;
 using System.Diagnostics;
 
-namespace PiInfoService
+namespace PiInfoService.Info
 {
-    public static class SWInfo
+    public static class Software
     {
         private static ProcessStartInfo IPProcessInfo = new ProcessStartInfo()
         {
