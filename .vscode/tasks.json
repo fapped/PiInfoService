@@ -1,0 +1,62 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/PiInfoService/PiInfoService.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/PiInfoService/PiInfoService.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "${workspaceFolder}/PiInfoService/PiInfoService.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "rpi-publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/PiInfoService/PiInfoService.csproj"
+            ]
+        },
+        {
+            "label": "rpi-deploy",
+            "dependsOn": "rpi-publish",
+            "command": "scp",
+            "type": "process",
+            "args": [
+                "-r",
+                "${workspaceFolder}/PiInfoService/bin/Debug/net5.0/publish/*",
+                "pi@192.168.1.150:/home/pi/dotnet-deploy/"
+            ]
+        }
+    ]
+}
