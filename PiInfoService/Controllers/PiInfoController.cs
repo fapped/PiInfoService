@@ -55,6 +55,7 @@ namespace PiInfoService.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.ToString());
                 return StatusCode(500, ex.ToString());
             }
 
@@ -72,6 +73,7 @@ namespace PiInfoService.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex.ToString());
                 return StatusCode(500, ex.ToString());
             }
 
