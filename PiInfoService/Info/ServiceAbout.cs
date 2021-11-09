@@ -1,6 +1,6 @@
 using System;
 
-namespace PiInfoService
+namespace PiInfoService.Info
 {
     public class ServiceAbout
     {
